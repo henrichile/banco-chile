@@ -18,8 +18,28 @@ class RoleTable extends Seeder
          $role->description = 'Administrator';
          $role->save();
          $role = new Role();
-         $role->name = 'invitado';
-         $role->description = 'Invitado';
+         $role->name = 'kraneo';
+         $role->description = 'kraneo';
+         $role->save();
+         $role = new Role();
+         $role->name = 'juradoszn';
+         $role->description = 'Jurados Zona Norte';
+         $role->save();
+         $role = new Role();
+         $role->name = 'juradoszc';
+         $role->description = 'Jurados Zona Centro';
+         $role->save();
+         $role = new Role();
+         $role->name = 'juradoszs';
+         $role->description = 'Jurados Zona Sur';
+         $role->save();
+         $role = new Role();
+         $role->name = 'juradosel';
+         $role->description = 'Jurado Seleccionado';
+         $role->save();      
+         $role = new Role();
+         $role->name = 'juradotodos';
+         $role->description = 'Jurado Todas las zonas';
          $role->save();
     }
 }
