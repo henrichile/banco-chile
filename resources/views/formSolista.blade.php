@@ -57,17 +57,17 @@
                             <label for="dia">Fecha de Nacimiento</label></br>
                                 <select id="dia" name="dia" class="form-control" onchange="javascript:calculaedadSolista()" style="width:70px;float:left" >';
                                 @for($j=1;$j<=31;$j++){
-                                    <option value="{{ $j }}">{{ $j }}</option>
+                                    <option value="{{ $j }}" @if($j==old(dia)) selected="selected" @endif>{{ $j }}</option>
                                 @endfor
                                      </select>
                                 <select id="mes" name="mes" class="form-control" onchange="javascript:calculaedadSolista()"  style="width:70px;;float:left" >';
                                 @for($j=1;$j<=12;$j++)
-                                   <option value="{{ $j }}">{{ $j }}</option>
+                                   <option value="{{ $j }}" @if($j==old(mes)) selected="selected" @endif>{{ $j }}</option>
                                 @endfor
                                 </select>
                                 <select id="ano" name="ano" class="form-control" onchange="javascript:calculaedadSolista()"  style="width:90px;;float:left" >';
                                     @for($j=1900;$j<=(date('Y')-12);$j++)
-                                        <option value="{{ $j }}">{{ $j }}</option>;
+                                        <option value="{{ $j }}" @if($j==old(ano)) selected="selected" @endif>{{ $j }}</option>;
                                     @endfor
                                 </select>
                     </div>
