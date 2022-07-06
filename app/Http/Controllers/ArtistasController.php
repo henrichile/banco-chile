@@ -138,7 +138,9 @@ class ArtistasController extends Controller
             'pista' => 'required|mimes:mp3,mp4'
         ]);
         $data=request();
-        //try {
+
+        try {
+            //try {
         $ruta_pista="";
         $date=date('Y-m-d');
         if(isset($request['pista']) && !empty($request['pista'])){
@@ -159,6 +161,7 @@ class ArtistasController extends Controller
                 'nombreBanda' => $data['banda'],
                 'colegio' => "",
                 'curso' => "",
+                'region' => $data['region'],
                 'responsable' => $data['responsable'],
                 'participantes' => $data['integrantes']
             ]);
@@ -202,6 +205,12 @@ class ArtistasController extends Controller
         }*/
         
         return view('resultado')->with('resultado',$resultado);
+        } catch (\Throwable $th) {
+            $request->session()->flash('alert-error', 'Ocurrio un error al completar el registro!!');
+            return back()->withInput();
+        }
+        
+        
     }
 
     /**
