@@ -69,7 +69,7 @@ class ArtistasController extends Controller
         ]);
         $data=request();
 
-        //try {
+        try {
            
 
         $date=date('Y-m-d');
@@ -118,13 +118,13 @@ class ArtistasController extends Controller
           
         Mail::to($data['correo'])->send(new registroSolista($data['nombre'],$data['correo']));
         $request->session()->flash('alert-success', 'Registro completado con exito!!');
-        $resultado=true;
-        /*} catch (\Throwable $th) {
-            $request->session()->flash('alert-error', 'Ocurrio un error al completar el registro!!');
-            $resultado=false;
-        }*/
-        
         return view('resultado')->with('resultado',$resultado);
+        } catch (\Throwable $th) {
+            $request->session()->flash('alert-error', 'Ocurrio un error al completar el registro!!');
+            return back()->withInput();
+        }
+        
+       
     }
 
 
