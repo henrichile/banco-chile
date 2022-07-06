@@ -53,7 +53,7 @@
                     </div>
 
 
-                    <div class="form-group mb-3 col-md-6">   
+                    <div class="form-group mb-3 col-md-6" style="height:80px">   
                             <label for="dia">Fecha de Nacimiento</label></br>
                                 <select id="dia" name="dia" class="form-control" onchange="javascript:calculaedadSolista()" style="width:70px;float:left" >';
                                 @for($j=1;$j<=31;$j++){
